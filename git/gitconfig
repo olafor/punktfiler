@@ -1,0 +1,29 @@
+[user]
+	email = ofornander@gmail.com
+	name = Carl Ola Fornander
+	
+[alias]
+    brc = for-each-ref --sort=committerdate refs/heads/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(color:bold blue)%(authorname)%(color:reset) - (%(color:green)%(committerdate:relative)%(color:reset))'
+    lg = log --pretty=format:'%C(yellow)%h%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative -n10
+    la = log --pretty=format:'%C(yellow)%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative -n10
+    st = status
+    br = branch
+    co = checkout
+    ci = commit   
+    cp = cherry-pick
+    sd = diff --name-status
+    sw = switch
+    last = log -1 HEAD
+    history = log --pretty=format:\"%h %cd | %s%d [%an]\" --graph --date=local
+
+[core]
+	editor = nvim
+
+[color]
+    status = always
+
+[diff]
+    tool = vimdiff
+
+[difftool]
+    prompt = false
