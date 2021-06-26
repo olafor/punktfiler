@@ -1,5 +1,8 @@
-"curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-"  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+"Uncomment when deriving from old vim
+"set runtimepath^=~/.vim runtimepath+=~/.vim/after
+"let &packpath = &runtimepath
+"source ~/.vimrc
 
 syntax on
 
@@ -38,9 +41,13 @@ set complete=k,.
 
 syntax enable
 
+" For Swedish keyboard layout
 nnoremap å <C-]>
 nnoremap ä @
 nnoremap , @@
+
+nnoremap <Tab> :bnext<CR>
+nnoremap <S-Tab> :bprevious<CR>
 
 inoremap { {}<left>
 inoremap {{ {
@@ -51,4 +58,7 @@ inoremap [] []
 inoremap ( ()<left>
 inoremap (( (
 inoremap () ()
+
+
+source $HOME/.config/nvim/themes/gruvbox.vim
 
