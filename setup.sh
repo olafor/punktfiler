@@ -4,11 +4,13 @@
 # Setup script for my dotfiles
 # Mostly taken from Jonas Ekstrand (joekst)
 
-# List of 'apps' to install using stow.
+# Install necessary packages
 
 if  [[ ! "${whoami}" = *"root"* ]]; then
    apt-get install -y stow neovim exuberant-ctags
 fi
+
+# List of 'apps' to install using stow.
 
 base=(
   git
@@ -34,5 +36,8 @@ for app in ${base[@]};do
   fi
 done
 
+echo ""
+echo "In case this did not quite work, use \"stow -n <app>\","
+echo "followed by \"stow <app\""
 echo ""
 echo "Done!"
