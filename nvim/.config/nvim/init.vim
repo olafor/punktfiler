@@ -39,12 +39,16 @@ set background=dark
 set omnifunc=syntaxcomplete#Complete
 set complete=k,.
 
+set nu
+
 syntax enable
 
 " For Swedish keyboard layout
 nnoremap å <C-]>
 nnoremap ä @
 nnoremap , @@
+
+nnoremap <C-S> :wa<CR>
 
 nnoremap <Tab> :bnext<CR>
 nnoremap <S-Tab> :bprevious<CR>
@@ -58,7 +62,6 @@ inoremap [] []
 inoremap ( ()<left>
 inoremap (( (
 inoremap () ()
-
 
 source $HOME/.config/nvim/themes/gruvbox.vim
 

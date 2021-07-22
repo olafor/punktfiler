@@ -1,5 +1,6 @@
 HISTCONTROL=ignoreboth
 shopt -s histappend
+HISTCONTROL=ignorespace
 HISTSIZE=10000
 HISTFILESIZE=20000
 
@@ -10,6 +11,9 @@ case "$TERM" in
 esac
 
 alias vi="nvim"
+alias la='ls -lah $LS_COLOR'
+
+function cl(){ cd "$@" && la; }
 
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
