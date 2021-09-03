@@ -15,6 +15,7 @@ base=(
   git
   bash
   nvim
+  tmux
 )
 
 

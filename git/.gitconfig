@@ -13,7 +13,8 @@
     cp = cherry-pick
     sd = diff --name-status
     sw = switch
-    last = log -1 HEAD
+    wc = whatchanged
+    last = whatchanged -1 HEAD
     history = log --pretty=format:\"%h %cd | %s%d [%an]\" --graph --date=local
     aliases = !git config --get-regexp alias | sed -re 's/alias\\.(\\S*)\\s(.*)$/\\1 = \\2/g'
 
