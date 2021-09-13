@@ -50,6 +50,9 @@ nnoremap , @@
 
 nnoremap <C-S> :wa<CR>
 
+nnoremap <F5> "=strftime("%Y-%m-%d %H:%M")<CR>po
+inoremap <F5> <C-R>=strftime("%Y-%m-%d %H:%M")<CR>))
+
 nnoremap <Tab> :bnext<CR>
 nnoremap <S-Tab> :bprevious<CR>
 
