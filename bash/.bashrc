@@ -19,7 +19,7 @@ export VISUAL='nvim'
 #export PS1='\[\033[01;31m\][\t]\[\e[m\]\[\033[01;32m\]\[\033[01;34m\]\w\[\033[00m\]\[\033[33m\]`__git_ps1`\[\033[00m\]\$ '
 
 #time,user,host,path
-export PS1='\[\033[01;31m\][\t]\[\e[m\]\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\[\033[33m\]\[\033[00m\]\$ '
+#export PS1='\[\033[01;31m\][\t]\[\e[m\]\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\[\033[33m\]\[\033[00m\]\$ '
 
 #time,path
 export PS1='\[\033[01;31m\][\t]\[\e[m\]\[\033[01;32m\]\[\033[01;34m\]\w\[\033[00m\]\[\033[33m\]\[\033[00m\]\$ '
@@ -39,3 +39,17 @@ export DISPLAY=:0.0
 if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
         source /etc/profile.d/vte.sh
 fi
+
+function git() {
+    if [[ "$1" = root ]];then
+        shift
+        local ROOT="$(command git rev-parse --show-toplevel 2> /dev/null || echo -n .)"
+        if [[ $# -eq 0 ]];then
+            cd "$ROOT"
+        else
+            (cd "$ROOT" && eval "$@")
+        fi
+    else
+        command git "$@"
+    fi
+}

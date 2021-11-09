@@ -26,10 +26,13 @@
 	editor = nvim
 
 [color]
-    status = always
+  status = always
 
 [diff]
-    tool = vimdiff
+  tool = nvimdiff
 
 [difftool]
-    prompt = false
+  prompt = false
+
+[difftool "nvimdiff"]
+  cmd = "nvim -d \"$LOCAL\" \"$REMOTE\""
