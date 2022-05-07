@@ -13,16 +13,7 @@ esac
 export EDITOR='nvim'
 export VISUAL='nvim'
 
-#source /usr/share/git-core/contrib/completion/git-promt.sh
-
-#time,path,branch
-#export PS1='\[\033[01;31m\][\t]\[\e[m\]\[\033[01;32m\]\[\033[01;34m\]\w\[\033[00m\]\[\033[33m\]`__git_ps1`\[\033[00m\]\$ '
-
-#time,user,host,path
-#export PS1='\[\033[01;31m\][\t]\[\e[m\]\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\[\033[33m\]\[\033[00m\]\$ '
-
-#time,path
-export PS1='\[\033[01;31m\][\t]\[\e[m\]\[\033[01;32m\]\[\033[01;34m\]\w\[\033[00m\]\[\033[33m\]\[\033[00m\]\$ '
+export PS1='\[\033[01;31m\][\t]\[\e[m\]\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\[\033[33m\]\[\033[00m\]\$ '
 
 alias vi="nvim"
 alias la='ls -lah $LS_COLOR'
@@ -33,8 +24,12 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
-# For x-server in Windows
-export DISPLAY=:0.0
+isWindows=$(uname -r | sed -n 's/.*\( *Microsoft *\).*/\1/ip')
+if [[ $isWindows = microsoft ]]; then
+    export DISPLAY="`grep nameserver /etc/resolv.conf | sed 's/nameserver //'`:0"
+    export DISPLAY="`sed -n 's/nameserver //p' /etc/resolv.conf`:0"
+    export DISPLAY=$(ip route|awk '/^default/{print $3}'):0.0
+fi
 
 if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
         source /etc/profile.d/vte.sh

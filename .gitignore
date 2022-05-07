@@ -1,3 +1,5 @@
 nvim/.config/nvim/libs/*
 nvim/.config/nvim/plugged/*
+nvim/.config/wslu/*
+nvim/.config/nvim/.netrwhist
 

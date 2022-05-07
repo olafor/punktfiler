@@ -1,4 +1,3 @@
-
 "Uncomment when deriving from old vim
 "set runtimepath^=~/.vim runtimepath+=~/.vim/after
 "let &packpath = &runtimepath
@@ -66,5 +65,6 @@ inoremap ( ()<left>
 inoremap (( (
 inoremap () ()
 
-source $HOME/.config/nvim/themes/gruvbox.vim
+tnoremap <Esc> <C-\><C-n>
 
+source $HOME/.config/nvim/themes/gruvbox.vim
