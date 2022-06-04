@@ -27,6 +27,17 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
 ### Plugins
 * vim-fugitive
 * vim-gitgutter
+* tpope/vim-fugitive
+* airblade/vim-gitgutter
+* scrooloose/NERDTree
+* nvim-lua/plenary.nvim
+* nvim-telescope/telescope.nvim
+* tpope/vim-surround
+* vimwiki/vimwiki
+* sheerun/vim-polyglot
+* jiangmiao/auto-pairs
+* morhetz/gruvbox
+* sindrets/diffview.nvim
 
 ### Themes
 * gruvbox
@@ -35,4 +46,5 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
 Convenient setup
 
 ## ToDo
-* Add cloud related setup
+* Clean nvim config
+* Add nvim plugin descriptions

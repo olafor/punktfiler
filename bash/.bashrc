@@ -17,6 +17,7 @@ export PS1='\[\033[01;31m\][\t]\[\e[m\]\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[0
 
 alias vi="nvim"
 alias la='ls -lah $LS_COLOR'
+alias ll='ls -lh $LS_COLOR'
 
 function cl(){ cd "$@" && la; }
 

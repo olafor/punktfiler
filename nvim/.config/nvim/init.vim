@@ -1,14 +1,19 @@
-"Uncomment when deriving from old vim
-"set runtimepath^=~/.vim runtimepath+=~/.vim/after
-"let &packpath = &runtimepath
-"source ~/.vimrc
-
 syntax on
 
 call plug#begin()
-Plug 'morhetz/gruvbox'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
+Plug 'scrooloose/NERDTree'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
+Plug 'tpope/vim-surround'
+Plug 'vimwiki/vimwiki'
+Plug 'sheerun/vim-polyglot'
+" Plug 'vim-airline/vim-airline' symbols do not show up in WSL2 
+" Plug 'vim-airline/vim-airline-themes'
+Plug 'jiangmiao/auto-pairs'
+Plug 'morhetz/gruvbox'
+Plug 'sindrets/diffview.nvim'
 call plug#end()
 
 set noerrorbells
@@ -27,6 +32,7 @@ set incsearch
 set cmdheight=1
 set updatetime=50
 set laststatus=2
+set title
 
 set wildmenu
 set wildmode=full
@@ -47,6 +53,8 @@ nnoremap å <C-]>
 nnoremap ä @
 nnoremap , @@
 
+let mapleader = " "
+
 nnoremap <C-S> :wa<CR>
 
 nnoremap <F5> "=strftime("%Y-%m-%d %H:%M")<CR>po
@@ -55,15 +63,11 @@ inoremap <F5> <C-R>=strftime("%Y-%m-%d %H:%M")<CR>))
 nnoremap <Tab> :bnext<CR>
 nnoremap <S-Tab> :bprevious<CR>
 
-inoremap { {}<left>
-inoremap {{ {
-inoremap {} {}
-inoremap [ []<left>
-inoremap [[ [
-inoremap [] []
-inoremap ( ()<left>
-inoremap (( (
-inoremap () ()
+" Find files using Telescope command-line sugar.
+nnoremap <leader>ff <cmd>Telescope find_files hidden=true<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
 tnoremap <Esc> <C-\><C-n>
 
