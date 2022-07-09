@@ -1,7 +1,14 @@
-export HISTCONTROL=ignoreboth:erasedups:ignorespace
+if [ -f /etc/bashrc  ]; then
+      . /etc/bashrc
+fi
+
+export HISTCONTROL=erasedups:ignorespace
 shopt -s histappend
 export HISTSIZE=100000
 export HISTFILESIZE=10000000
+
+# Spara alltid till historien
+export PROMPT_COMMAND='history -a'
 
 shopt -s checkwinsize
 
@@ -21,8 +28,8 @@ alias grep='grep --color'
 
 function cl(){ cd "$@" && la; }
 
-isWindows=$(uname -r | sed -n 's/.*\( *Microsoft *\).*/\1/ip')
-if [[ $isWindows = microsoft ]]; then
+possibleMicrosoftString=$(uname -r | sed -n 's/.*\( *Microsoft *\).*/\1/ip')
+if [[ $possibleMicrosoftString = microsoft ]]; then
     export DISPLAY="`grep nameserver /etc/resolv.conf | sed 's/nameserver //'`:0"
     export DISPLAY="`sed -n 's/nameserver //p' /etc/resolv.conf`:0"
     export DISPLAY=$(ip route|awk '/^default/{print $3}'):0.0

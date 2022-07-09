@@ -28,7 +28,7 @@ set wildmode=full
 set background=dark
 set omnifunc=syntaxcomplete#Complete
 set complete=k,.
-set nu
+set textwidth=110
 set updatetime=200
 let mapleader = " "
 
@@ -49,11 +49,13 @@ nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 nnoremap <C-S> :wa<CR>
 nnoremap / /\v
 vnoremap / /\v
-nnoremap <F5> "=strftime("%Y-%m-%d %H:%M")<CR>po
+nnoremap <F5> "=strftime("%Y-%m-%d %H:%M")<CR>
 inoremap <F5> <C-R>=strftime("%Y-%m-%d %H:%M")<CR>
 nnoremap <Tab> :bnext<CR>
 nnoremap <S-Tab> :bprevious<CR>
 tnoremap <Esc> <C-\><C-n>
+map <F2> :NERDTreeToggle<CR>
+map <F3> :ZenMode<CR>
 
 " PLUGINS
 call plug#begin()

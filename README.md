@@ -16,10 +16,11 @@ stow bash
 NOTERA: Det har visat sig vara enklare att sätta upp symlänkar för hand
 
 ## Bash
-* Sätt lokala inställningar och funktioner i '~/.bash_aliases'
+* Sätt lokala inställningar och funktioner i *~/.bash_aliases*
+* Använd *. ~/.bashrc* istället för *source ~/.bashrc* av säkerhetsskäl
 
 ## NeoVim
-* Install a plugin manager
+* Install a plugin manager, for example:
 ```bash
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
@@ -28,7 +29,7 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
 * Then, in neovim, use *:PlugInstall*
 
 ### Skriva
-* Använd ':setlocal spell spelllang=sv' för att hitta felstavade ord på svenska
+* Använd *:setlocal spell spelllang=sv* för att hitta felstavade ord på svenska
 
 ### Plugins
 * vim-fugitive
@@ -48,7 +49,7 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
 * folke/zen_mode.nvim
 
 #### vimwiki
-* Om jag använder Windows 11 kan jag sätta denna under: '/mnt/c/Users/olafo/OneDrive/vimwiki' och sätta upp en symlänk dit
+* Om jag använder Windows 11 kan jag sätta denna under: */mnt/c/Users/olafo/OneDrive/vimwiki* och sätta upp en symlänk dit
 
 #### zenmode
 https://github.com/folke/zen-mode.nvim
@@ -58,6 +59,9 @@ https://github.com/folke/zen-mode.nvim
 
 ## Tmux
 Convenient setup
+
+## Gdb
+*.gdbinit* to be properly written
 
 ## ToDo
 * Clean nvim config
