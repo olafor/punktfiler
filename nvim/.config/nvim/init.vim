@@ -30,6 +30,7 @@ set omnifunc=syntaxcomplete#Complete
 set complete=k,.
 set textwidth=110
 set updatetime=200
+set nu
 let mapleader = " "
 
 " REMAPPING KEYS
@@ -49,7 +50,7 @@ nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 nnoremap <C-S> :wa<CR>
 nnoremap / /\v
 vnoremap / /\v
-nnoremap <F5> "=strftime("%Y-%m-%d %H:%M")<CR>
+nnoremap <F5> i<C-R>=strftime("%Y-%m-%d %H:%M")<CR><Esc>
 inoremap <F5> <C-R>=strftime("%Y-%m-%d %H:%M")<CR>
 nnoremap <Tab> :bnext<CR>
 nnoremap <S-Tab> :bprevious<CR>
@@ -72,8 +73,8 @@ call plug#begin()
     Plug 'sindrets/diffview.nvim'
     Plug 'ajorgensen/vim-markdown-toc'
     Plug 'folke/zen-mode.nvim'
-    "Plug 'vim-airline/vim-airline'
-    "Plug 'vim-airline/vim-airline-themes'
+    Plug 'vim-airline/vim-airline'
+    Plug 'vim-airline/vim-airline-themes'
 call plug#end()
 
 " SOURCE OTHER FILES

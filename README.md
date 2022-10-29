@@ -1,19 +1,11 @@
 # PunktFiler
 A repository for setting up my dotfiles
 
-To install with stow, use 
+Sätt upp symlänkar till önskvärda kataloger/filer, t.ex:
 ```bash
-sudo ./setup.sh
+cd /home/$USER/.config
+ln -s ~/.punktfile/nvim/.config/nvim/
 ```
-
-In some cases you might need to
-* Rename the existing file
-* use the following commands
-```bash 
-stow -n bash
-stow bash
-```
-NOTERA: Det har visat sig vara enklare att sätta upp symlänkar för hand
 
 ## Bash
 * Sätt lokala inställningar och funktioner i *~/.bash_aliases*
@@ -63,6 +55,18 @@ Convenient setup
 ## Gdb
 *.gdbinit* to be properly written
 
+## I3
+Grundläggande inställningar
+* alacritty satt som terminal
+
+## etc...
+### fzf
+https://github.com/junegunn/fzf
+
+Lägg till följande harang till .bashrc:
+```bash
+[ -f ~/.fzf.bash ] && . ~/.fzf.bash
+```
 ## ToDo
 * Clean nvim config
 * Add nvim plugin descriptions
