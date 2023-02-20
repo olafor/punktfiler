@@ -52,9 +52,10 @@ nnoremap / /\v
 vnoremap / /\v
 nnoremap <F5> i<C-R>=strftime("%Y-%m-%d %H:%M")<CR><Esc>
 inoremap <F5> <C-R>=strftime("%Y-%m-%d %H:%M")<CR>
-nnoremap <Tab> :bnext<CR>
-nnoremap <S-Tab> :bprevious<CR>
+nnoremap <Tab> :tabnext<CR>
+nnoremap <S-Tab> :tabprevious<CR>
 tnoremap <Esc> <C-\><C-n>
+map <F1> :tabnew<CR>
 map <F2> :NERDTreeToggle<CR>
 map <F3> :ZenMode<CR>
 
@@ -75,6 +76,7 @@ call plug#begin()
     Plug 'folke/zen-mode.nvim'
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
+    Plug 'rust-lang/rust.vim'
 call plug#end()
 
 " SOURCE OTHER FILES

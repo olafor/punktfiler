@@ -30,7 +30,12 @@ font xft:URWGothic-Book 11
 floating_modifier $mod
 
 # start a terminal
-#bindsym $mod+Return exec terminal
+# bindsym $mod+Return exec terminal
+
+# Denna ser ut att vara standard:
+#bindsym $mod+Return exec i3-sensible-terminal
+
+# Denna kör jag för närvarande på Manjaro
 bindsym $mod+Return exec alacritty
 
 # kill focused window
@@ -47,10 +52,10 @@ bindsym $mod+z exec --no-startup-id morc_menu
 ################################################################################################
 
 exec --no-startup-id volumeicon
-bindsym $mod+Ctrl+m exec terminal -e 'alsamixer'
-#exec --no-startup-id pulseaudio
-#exec --no-startup-id pa-applet
-#bindsym $mod+Ctrl+m exec pavucontrol
+#bindsym $mod+Ctrl+m exec terminal -e 'alsamixer'
+exec --no-startup-id pulseaudio
+exec --no-startup-id pa-applet
+bindsym $mod+Ctrl+m exec pavucontrol
 
 ################################################################################################
 
@@ -60,7 +65,7 @@ bindsym $mod+Ctrl+m exec terminal -e 'alsamixer'
 
 # Start Applications
 bindsym $mod+Ctrl+b exec terminal -e 'bmenu'
-bindsym $mod+F2 exec palemoon
+bindsym $mod+F2 exec firefox
 bindsym $mod+F3 exec pcmanfm
 # bindsym $mod+F3 exec ranger
 bindsym $mod+Shift+F3 exec pcmanfm_pkexec
@@ -77,6 +82,7 @@ bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
 # focus_follows_mouse no
 
 # change focus
+# VIM!
 bindsym $mod+H focus left
 bindsym $mod+J focus down
 bindsym $mod+K focus up
@@ -89,6 +95,7 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # move focused window
+# VIM!
 bindsym $mod+Shift+H move left
 bindsym $mod+Shift+J move down
 bindsym $mod+Shift+K move up
@@ -278,7 +285,7 @@ bindsym $mod+9 exec --no-startup-id blurlock
 # Autostart applications
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id nitrogen --restore; sleep 1; picom -b
-exec --no-startup-id manjaro-hello
+#exec --no-startup-id manjaro-hello
 exec --no-startup-id nm-applet
 exec --no-startup-id xfce4-power-manager
 exec --no-startup-id pamac-tray
@@ -287,7 +294,7 @@ exec --no-startup-id clipit
 # exec_always --no-startup-id sbxkb
 exec --no-startup-id start_conky_maia
 # exec --no-startup-id start_conky_green
-exec --no-startup-id xautolock -time 10 -locker blurlock
+exec --no-startup-id xautolock -time 60 -locker blurlock
 exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
 
@@ -420,5 +427,3 @@ mode "$mode_gaps_outer" {
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
-
-

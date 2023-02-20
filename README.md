@@ -11,6 +11,10 @@ ln -s ~/.punktfile/nvim/.config/nvim/
 * Sätt lokala inställningar och funktioner i *~/.bash_aliases*
 * Använd *. ~/.bashrc* istället för *source ~/.bashrc* av säkerhetsskäl
 
+## LunarVim
+* Ett lager ovanpå NeoVIM v0.8.0+ som själv sätter upp LSPar och lite annat trevligt
+* Instruktionerna är oerhört enkla och kan läsas här: https://www.lunarvim.org/docs/installation
+
 ## NeoVim
 * Install a plugin manager, for example:
 ```bash
@@ -68,6 +72,4 @@ Lägg till följande harang till .bashrc:
 [ -f ~/.fzf.bash ] && . ~/.fzf.bash
 ```
 ## ToDo
-* Clean nvim config
-* Add nvim plugin descriptions
-* Convert init.vim to init.lua
+* LSP för Gstreamer

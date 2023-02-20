@@ -16,15 +16,21 @@ case "$TERM" in
     xterm|xterm-color|*-256color) color_prompt=yes;;
 esac
 
-export EDITOR='nvim'
-export VISUAL='nvim'
+export EDITOR='lvim'
+export VISUAL='lvim'
+export BROWSER=/usr/bin/firefox
 
 export PS1='\[\033[01;31m\][\t]\[\e[m\]\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\[\033[33m\]\[\033[00m\]\$ '
 
-alias vi="nvim"
+export PATH=$PATH:/local/bin
+
+alias vi="lvim"
 alias la='ls -lah $LS_COLOR'
 alias ll='ls -lh $LS_COLOR'
 alias grep='grep --color'
+
+# Testar doom emacs
+export PATH=$PATH:$HOME/.emacs.d/bin
 
 function cl(){ cd "$@" && la; }
 
