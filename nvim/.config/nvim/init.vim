@@ -1,5 +1,44 @@
 " OLAS VIMRC
 
+" FUNKTIONER
+function OlasTabLabel(n)
+  let buflist = tabpagebuflist(a:n)
+  let winnr = tabpagewinnr(a:n)
+  let bname = bufname(buflist[winnr - 1])
+  if strlen(bname) == 0
+    return "[Empty]"
+  else
+    let i = strridx(bname, "/")
+    return strpart(bname, i+1)
+endfunction
+
+function OlasTabLine()
+  let s = ''
+  for i in range(tabpagenr('$'))
+	" select the highlighting
+	if i + 1 == tabpagenr()
+	  let s ..= '%#TabLineSel#'
+	else
+	  let s ..= '%#TabLine#'
+	endif
+
+	" set the tab page number (for mouse clicks)
+	let s ..= '%' .. (i + 1) .. 'T'
+
+	" the label is made by OlasTabLabel()
+	let s ..= ' %{OlasTabLabel(' .. (i + 1) .. ')} '
+  endfor
+
+  " after the last tab fill with TabLineFill and reset tab page nr
+  let s ..= '%#TabLineFill#%T'
+
+  " right-align the label to close the current tab page
+  if tabpagenr('$') > 1
+	let s ..= '%=%#TabLine#%999Xclose'
+  endif
+  return s
+endfunction
+
 " SETTING SYSTEM VARIABLES
 syntax enable
 set incsearch
@@ -31,6 +70,7 @@ set complete=k,.
 set textwidth=110
 set updatetime=200
 set nu
+set tabline=%!OlasTabLine()
 let mapleader = " "
 
 " REMAPPING KEYS
@@ -55,28 +95,29 @@ inoremap <F5> <C-R>=strftime("%Y-%m-%d %H:%M")<CR>
 nnoremap <Tab> :tabnext<CR>
 nnoremap <S-Tab> :tabprevious<CR>
 tnoremap <Esc> <C-\><C-n>
-map <F1> :tabnew<CR>
-map <F2> :NERDTreeToggle<CR>
+map <F1> :tabnew %<CR>
+map <F2> :NERDTreeToggleVCS<CR>
 map <F3> :ZenMode<CR>
+cnoremap help vert help
 
 " PLUGINS
 call plug#begin()
-    Plug 'tpope/vim-fugitive'
-    Plug 'airblade/vim-gitgutter'
-    Plug 'scrooloose/NERDTree'
-    Plug 'nvim-lua/plenary.nvim'
-    Plug 'nvim-telescope/telescope.nvim'
-    Plug 'tpope/vim-surround'
-    Plug 'vimwiki/vimwiki'
-    Plug 'sheerun/vim-polyglot'
-    Plug 'jiangmiao/auto-pairs'
-    Plug 'morhetz/gruvbox'
-    Plug 'sindrets/diffview.nvim'
-    Plug 'ajorgensen/vim-markdown-toc'
-    Plug 'folke/zen-mode.nvim'
-    Plug 'vim-airline/vim-airline'
-    Plug 'vim-airline/vim-airline-themes'
-    Plug 'rust-lang/rust.vim'
+  Plug 'tpope/vim-fugitive'
+  Plug 'airblade/vim-gitgutter'
+  Plug 'scrooloose/NERDTree'
+  Plug 'nvim-lua/plenary.nvim'
+  Plug 'nvim-telescope/telescope.nvim'
+  Plug 'tpope/vim-surround'
+  Plug 'vimwiki/vimwiki'
+  Plug 'sheerun/vim-polyglot'
+  Plug 'jiangmiao/auto-pairs'
+  Plug 'morhetz/gruvbox'
+  Plug 'sindrets/diffview.nvim'
+  Plug 'ajorgensen/vim-markdown-toc'
+  Plug 'folke/zen-mode.nvim'
+  Plug 'vim-airline/vim-airline'
+  Plug 'vim-airline/vim-airline-themes'
+  Plug 'rust-lang/rust.vim'
 call plug#end()
 
 " SOURCE OTHER FILES
@@ -84,7 +125,7 @@ source $HOME/.config/nvim/themes/gruvbox.vim
 
 " PLUGIN SPECIFICS
 lua << EOF
-    require("zen-mode").setup {
+  require("zen-mode").setup {
   window = {
     backdrop = 0.95, -- shade the backdrop of the Zen window. Set to 1 to keep the same as Normal
     -- height and width can be:

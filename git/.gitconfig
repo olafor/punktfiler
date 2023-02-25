@@ -17,6 +17,7 @@
     last = whatchanged -1 HEAD
     history = log --pretty=format:\"%h %cd | %s%d [%an]\" --graph --date=local
     aliases = !git config --get-regexp alias | sed -re 's/alias\\.(\\S*)\\s(.*)$/\\1 = \\2/g'
+    uncom = diff --name-only
     unmerged = diff --name-only --diff-filter=U HEAD HEAD~1
     added = diff --name-only --diff-filter=A HEAD HEAD~1
     modified = diff --name-only --diff-filter=M HEAD HEAD~1
