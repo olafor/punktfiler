@@ -1,22 +1,23 @@
 return require('packer').startup(function(use)
-  use 'tpope/vim-fugitive'
   use 'airblade/vim-gitgutter'
-  use 'scrooloose/NERDTree'
-  use 'nvim-lua/plenary.nvim'
-  use 'nvim-telescope/telescope.nvim'
-  use 'tpope/vim-surround'
-  use 'sheerun/vim-polyglot'
+  use 'ajorgensen/vim-markdown-toc'
+  use 'dhruvasagar/vim-table-mode'
+  use 'folke/tokyonight.nvim'
+  use 'folke/zen-mode.nvim'
   use 'jiangmiao/auto-pairs'
   use 'morhetz/gruvbox'
-  use 'folke/tokyonight.nvim'
+  use 'nvim-lua/plenary.nvim'
+  use 'nvim-telescope/telescope.nvim'
+  use 'nvim-treesitter/nvim-treesitter'
+  use 'preservim/tagbar'
+  use 'rust-lang/rust.vim'
+  use 'scrooloose/NERDTree'
+  use 'sheerun/vim-polyglot'
   use 'sindrets/diffview.nvim'
-  use 'ajorgensen/vim-markdown-toc'
-  use 'folke/zen-mode.nvim'
+  use 'tpope/vim-fugitive'
+  use 'tpope/vim-surround'
   use 'vim-airline/vim-airline'
   use 'vim-airline/vim-airline-themes'
-  use 'rust-lang/rust.vim'
-  use 'preservim/tagbar'
-  use 'nvim-treesitter/nvim-treesitter'
   use {'nvim-orgmode/orgmode', config = function()
   -- Load custom tree-sitter grammar for org filetype
   require('orgmode').setup_ts_grammar()
@@ -35,7 +36,7 @@ return require('packer').startup(function(use)
   require('orgmode').setup({
     org_agenda_files = '~/org/*',
     org_default_notes_file = '~/org/inkorg.org',
-    org_todo_keywords = { 'TODO', 'VÄNTAR', '|', 'KLAR' },
+    org_todo_keywords = { 'TODO(t)', 'VÄNTAR(v)', '|', 'KLAR(k)', 'AVBRUTEN(a)'},
     org_todo_keyword_faces = {},
     org_deadline_warning_days = 0,
     org_agenda_min_height = 16,
@@ -45,33 +46,44 @@ return require('packer').startup(function(use)
     calendar_week_start_day = 1,
     org_capture_templates = {
       t = {
-        description = 'Task',
-        template = '*TODO %?\n  %u',
+        description = 'task',
+        template = '\n** TODO %?\n  %u',
+        target = '~/org/inkorg.org',
+        headline = 'Tasks'
       },
       i = {
         description = 'idéer',
-        template = '* %?\n  Entered on %U\n'
+        template = '\n** %?\n  Entered on %U\n',
+        target = '~/org/anteckningar.org',
+        headline = 'Idéer'
         },
       d = {
-        description = 'Dagbok',
-        template = '* %U\n%?',
+        description = 'dagbok',
+        template = '\n* %U\n%?',
         target = '~/org/dagbok.org'
         },
       a = {
-        description = 'Anteckning',
-        template = '* %?\n%U\n'
+        description = 'anteckning',
+        template = '\n** %U -> %?\n',
+        target = '~/org/anteckningar.org',
+        headline = 'Anteckningar'
         },
       f = {
-        description = 'Fysik',
-        template = '|%U|%?| | | |'
+        description = 'fysik',
+        template = '| %U | %? |  |  |  |',
+        target = '~/org/fysik.org',
+        headline = 'Fysik'
         },
       b = {
-        description = 'Bok färdigläst',
-        template = '* %?\n%U\n'
+        description = 'bok färdigläst',
+        template = '\n** %?\n%U\n',
+        target = '~/org/libros.org',
+        headline = 'Böcker'
         },
       p = {
-        description = 'Paper finished',
-        template = '* %?\n%U\n'
+        description = 'paper finished',
+        template = '\n* %?\n%U\n',
+        target = '~/org/forskningspapper.org'
         }
     },
     org_agenda_skip_scheduled_if_done = false,
@@ -84,7 +96,7 @@ return require('packer').startup(function(use)
     org_tags_column = -80,
     org_use_tag_inheritance = true,
     org_tags_exclude_from_inheritance = {},
-    org_hide_leading_stars = false,
+    org_hide_leading_stars = true,
     org_hide_emphasis_markers = false,
     org_ellipsis = '...',
     org_log_done = 'time',
@@ -226,9 +238,9 @@ return require('packer').startup(function(use)
   })
 
   end}
-  use {'akinsho/org-bullets.nvim', config = function()
-    require('org-bullets').setup()
-  end}
+  -- use {'akinsho/org-bullets.nvim', config = function()
+  --  require('org-bullets').setup()
+  --end}
   use 'jubnzv/mdeval.nvim'
 end)
 

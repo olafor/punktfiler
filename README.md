@@ -12,38 +12,41 @@ ln -s ~/.punktfile/nvim
 * Använd *. ~/.bashrc* istället för *source ~/.bashrc* av säkerhetsskäl
 
 ## NeoVim
-* Install a plugin manager, for example:
+* Install the Packer plugin manager:
 ```bash
-sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
-       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+git clone --depth 1 https://github.com/wbthomason/packer.nvim\
+ ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 ```
-
-* Then, in neovim, use *:PlugInstall*
+* Then, in neovim, use the :Packer* commands
 
 ### Skriva
 * Använd *:setlocal spell spelllang=sv* för att hitta felstavade ord på svenska
 
 ### Plugins
-* tpope/vim-fugitive
 * airblade/vim-gitgutter
-* scrooloose/NERDTree
-* nvim-lua/plenary.nvim
-* nvim-telescope/telescope.nvim
-* tpope/vim-surround
-* sheerun/vim-polyglot
-* jiangmiao/auto-pairs
-* morhetz/gruvbox
-* sindrets/diffview.nvim
 * ajorgensen/vim-markdown-toc
+* akinsho/org-bullets.nvim
+* folke/tokyonight.nvim
 * folke/zen-mode.nvim
+* jiangmiao/auto-pairs
+* jubnzv/mdeval.nvim
+* morhetz/gruvbox
+* nvim-lua/plenary.nvim
+* nvim-orgmode/orgmode
+* nvim-telescope/telescope.nvim
+* nvim-treesitter/nvim-treesitter
+* preservim/tagbar
+* rust-lang/rust.vim
+* scrooloose/NERDTree
+* sheerun/vim-polyglot
+* sindrets/diffview.nvim
+* tpope/vim-fugitive
+* tpope/vim-surround
 * vim-airline/vim-airline
 * vim-airline/vim-airline-themes
-* rust-lang/rust.vim
-* preservim/tagbar
-* nvim-treesitter/nvim-treesitter
-* nvim-orgmode/orgmode
 
 ### Themes
+* tokyonight
 * gruvbox
 
 ## Tmux
