@@ -32,13 +32,15 @@ vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
 vim.cmd([[
-"syntax enable
+"
+syntax enable
 colorscheme tokyonight-night
 if (has('termguicolors'))
     set termguicolors
     hi LineNr ctermbg=NONE guibg=NONE
 endif
-autocmd FileType org GitGutterDisable"
+autocmd FileType org GitGutterDisable
+"
 ]])
 
 

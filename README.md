@@ -27,6 +27,7 @@ git clone --depth 1 https://github.com/wbthomason/packer.nvim\
 * ajorgensen/vim-markdown-toc
 * akinsho/org-bullets.nvim
 * folke/tokyonight.nvim
+* folke/which-key.nvim
 * folke/zen-mode.nvim
 * jiangmiao/auto-pairs
 * jubnzv/mdeval.nvim
