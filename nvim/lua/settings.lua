@@ -40,7 +40,8 @@ if (has('termguicolors'))
     hi LineNr ctermbg=NONE guibg=NONE
 endif
 autocmd FileType org GitGutterDisable
+set foldmethod=expr
+set foldexpr=nvim_treesitter#foldexpr()
+set nofoldenable
 "
 ]])
-
-
