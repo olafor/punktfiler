@@ -14,12 +14,22 @@ function vmap(shortcut, command)
   map('v', shortcut, command)
 end
 
+function org_dir()
+  require('telescope.builtin').find_files {
+    winblend = 5,
+    border = true,
+    cwd = '~/org',
+    file_ignore_patterns = { ".git", "tags" }
+  }
+end
+
 -- För svenskt tangentbord
 nmap('å', '<C-]>')
 nmap('ä', '@')
 nmap(',', '@@')
 
--- Find files using Telescope command-line sugar.
+-- Telescope
+nmap("<Leader>fo", "<cmd>lua org_dir()<CR>")
 nmap('<leader>ff', '<cmd>Telescope find_files<cr>')
 nmap('<leader>fg', '<cmd>Telescope live_grep<cr>')
 nmap('<leader>fb', '<cmd>Telescope buffers<cr>')

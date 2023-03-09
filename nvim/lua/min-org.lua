@@ -168,7 +168,7 @@ require('orgmode').setup({
       org_edit_special = [[<prefix>']],
       org_cycle = '<TAB>',
       org_global_cycle = '<S-TAB>',
-      org_archive_subtree = '<prefix>$',
+      org_archive_subtree = '<prefix>$', -- buggig, men jag får leva med det tills vidare...
       org_set_tags_command = '<prefix>t',
       org_toggle_archive_tag = '<prefix>A',
       org_do_promote = '<<',
@@ -176,7 +176,7 @@ require('orgmode').setup({
       org_promote_subtree = '<s',
       org_demote_subtree = '>s',
       org_meta_return = '<Leader><CR>', -- Add heading, item or row (context-dependent)
-      org_return = '<CR>',
+      org_return = 'qqqqqqqqq', -- Default value: '<CR>', org_return tycks buggig, vad är egentligen syftet?
       org_insert_heading_respect_content = '<prefix>ih', -- Add new heading after current heading block (same level)
       org_insert_todo_heading = '<prefix>iT', -- Add new todo heading right after current heading (same level)
       org_insert_todo_heading_respect_content = '<prefix>it', -- Add new todo heading after current heading block (same level)
