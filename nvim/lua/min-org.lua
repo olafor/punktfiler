@@ -13,6 +13,12 @@ require'nvim-treesitter.configs'.setup {
   ensure_installed = {'org'}, -- Or run :TSUpdate org
 }
 
+require'cmp'.setup({
+  sources = {
+    { name = 'orgmode' }
+  }
+})
+
 require('orgmode').setup({
   org_agenda_files = '~/org/*',
   org_default_notes_file = '~/org/inkorg.org',
@@ -25,28 +31,22 @@ require('orgmode').setup({
   org_agenda_start_day = '-1d', -- start from today + this modifier
   calendar_week_start_day = 1,
   org_capture_templates = {
-    t = {
-      description = 'task',
-      template = '\n** TODO %?\n  %u',
-      target = '~/org/inkorg.org',
-      headline = 'Tasks'
-    },
-    i = {
-      description = 'idéer',
-      template = '\n** %?\n  Entered on %U\n',
+    a = {
+      description = 'anteckning',
+      template = '** %U -> %?\n',
       target = '~/org/anteckningar.org',
-      headline = 'Idéer'
+      headline = 'Anteckningar'
+      },
+    b = {
+      description = 'bokmärke',
+      template = '** %U -> %?\n',
+      target = '~/org/bokmarken.org',
+      headline = 'Bokmärken'
       },
     d = {
       description = 'dagbok',
-      template = '\n* %U\n%?',
+      template = '* %U\n%?',
       target = '~/org/dagbok.org'
-      },
-    a = {
-      description = 'anteckning',
-      template = '\n** %U -> %?\n',
-      target = '~/org/anteckningar.org',
-      headline = 'Anteckningar'
       },
     f = {
       description = 'fysik',
@@ -54,17 +54,47 @@ require('orgmode').setup({
       target = '~/org/fysik.org',
       headline = 'Fysik'
       },
-    b = {
-      description = 'bok färdigläst',
-      template = '\n** %?\n%U',
+    h = {
+      description = 'händelse',
+      template = '** %?\n %U',
+      target = '~/org/kommande.org',
+      headline = 'Händelser'
+      },
+    i = {
+      description = 'idé',
+      template = '** %U -> %?\n',
+      target = '~/org/anteckningar.org',
+      headline = 'Idéer'
+      },
+    l = {
+      description = 'libro leído',
+      template = '** %?\n%U',
       target = '~/org/libros.org',
       headline = 'Böcker'
       },
     p = {
       description = 'paper finished',
-      template = '\n* %?\n%U\n',
+      template = '** %?\n%U\n',
       target = '~/org/forskningspapper.org'
-      }
+      },
+    s = {
+      description = 'skriva',
+      template = '** %U -> %?\n',
+      target = '~/org/skrivande.org',
+      headline = 'Svenska'
+    },
+    t = {
+      description = 'tyska',
+      template = '** %U -> %?\n',
+      target = '~/org/skrivande.org',
+      headline = 'Tyska'
+    },
+    u = {
+      description = 'uppgift',
+      template = '** TODO %?\n %U',
+      target = '~/org/inkorg.org',
+      headline = 'Uppgifter'
+    }
   },
   org_agenda_skip_scheduled_if_done = false,
   org_agenda_skip_deadline_if_done = false,

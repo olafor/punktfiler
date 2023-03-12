@@ -19,7 +19,7 @@ function org_dir()
     winblend = 5,
     border = true,
     cwd = '~/org',
-    file_ignore_patterns = { ".git", "tags" }
+    file_ignore_patterns = { ".git", "tags", "archive" }
   }
 end
 
