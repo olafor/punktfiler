@@ -45,7 +45,6 @@ nmap('<F3>', ':ZenMode<CR>')
 
 vim.cmd([[
 "
-cnoremap help vert help
 tnoremap <Esc> <C-\><C-n>
 nnoremap <F5> i<C-R>=strftime("%Y-%m-%d %H:%M")<CR><Esc>
 inoremap <F5> <C-R>=strftime("%Y-%m-%d %H:%M")<CR>

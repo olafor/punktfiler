@@ -41,6 +41,6 @@ if (has('termguicolors'))
 endif
 autocmd FileType org GitGutterDisable
 set foldmethod=expr
-autocmd FileType org setlocal foldexpr=OrgmodeFoldExpr() " Ska detta verkligen behövas... ?
+autocmd FileType org setlocal foldexpr=nvim_treesitter#foldexpr()
 "
 ]])
