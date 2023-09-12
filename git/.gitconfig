@@ -60,4 +60,4 @@
     changed = red
 	untracked = cyan
 [init]
-	defaultBranch = master
+	defaultBranch = main

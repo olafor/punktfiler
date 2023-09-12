@@ -29,6 +29,7 @@ git clone --depth 1 https://github.com/wbthomason/packer.nvim\
 * folke/tokyonight.nvim
 * folke/which-key.nvim
 * folke/zen-mode.nvim
+* ggandor/leap.nvim
 * jiangmiao/auto-pairs
 * jubnzv/mdeval.nvim
 * morhetz/gruvbox
@@ -60,7 +61,7 @@ Convenient setup
 Grundläggande inställningar
 * alacritty satt som terminal
 
-## etc...
+## Cetera
 ### fzf
 https://github.com/junegunn/fzf
 

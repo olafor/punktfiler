@@ -50,3 +50,5 @@ nnoremap <F5> i<C-R>=strftime("%Y-%m-%d %H:%M")<CR><Esc>
 inoremap <F5> <C-R>=strftime("%Y-%m-%d %H:%M")<CR>
 "
 ]])
+
+require('leap').add_default_mappings()

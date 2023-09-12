@@ -9,7 +9,7 @@ return require('packer').startup(function()
   --end}
   use 'folke/tokyonight.nvim'
   use {
-    "folke/which-key.nvim",
+    'folke/which-key.nvim',
     config = function()
     vim.o.timeout = true
     vim.o.timeoutlen = 1000
@@ -37,4 +37,5 @@ return require('packer').startup(function()
   use 'tpope/vim-surround'
   use 'vim-airline/vim-airline'
   use 'vim-airline/vim-airline-themes'
+  use 'ggandor/leap.nvim'
 end)
