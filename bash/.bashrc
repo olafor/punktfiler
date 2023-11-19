@@ -16,28 +16,19 @@ case "$TERM" in
     xterm|xterm-color|*-256color) color_prompt=yes;;
 esac
 
-export EDITOR='nvim'
-export VISUAL='nvim'
+export EDITOR="nvim"
+export VISUAL="nvim"
 export BROWSER=/usr/bin/firefox
 
-export PS1='\[\033[01;31m\][\t]\[\e[m\]\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\[\033[33m\]\[\033[00m\]\$ '
+KLOCKA="\[\033[01;31m\][\t]\[\e[m\]\[\033[01;32m\]"
+export PS1="$KLOCKA\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\[\033[33m\]\[\033[00m\]\$ "
 
 alias vi="nvim"
-alias la='ls -lah $LS_COLOR'
-alias ll='ls -lh $LS_COLOR'
-alias grep='grep --color'
-
-# Testar doom emacs
-export PATH=$PATH:$HOME/.emacs.d/bin
+alias la="ls -lah $LS_COLOR"
+alias ll="ls -lh $LS_COLOR"
+alias grep="grep --color"
 
 function cl(){ cd "$@" && la; }
-
-possibleMicrosoftString=$(uname -r | sed -n 's/.*\( *Microsoft *\).*/\1/ip')
-if [[ $possibleMicrosoftString = microsoft ]]; then
-    export DISPLAY="`grep nameserver /etc/resolv.conf | sed 's/nameserver //'`:0"
-    export DISPLAY="`sed -n 's/nameserver //p' /etc/resolv.conf`:0"
-    export DISPLAY=$(ip route|awk '/^default/{print $3}'):0.0
-fi
 
 function git() {
     if [[ "$1" = root ]];then
@@ -53,6 +44,13 @@ function git() {
     fi
 }
 
+if [ -f "$HOME/.cargo/env" ]; then
+    . "$HOME/.cargo/env"
+fi
+
+if [ -f "$HOME/.plantuml.jar" ]; then
+    alias plantuml="java -jar $HOME/.plantuml.jar"
+fi
 
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases

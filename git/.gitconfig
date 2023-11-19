@@ -1,7 +1,3 @@
-[user]
-	email = ofornander@gmail.com
-	name = Carl Ola Fornander
-	
 [alias]
     brc = for-each-ref --sort=committerdate refs/heads/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(color:bold blue)%(authorname)%(color:reset) - (%(color:green)%(committerdate:relative)%(color:reset))'
     lg = log --pretty=format:'%C(yellow)%h%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative -n10
@@ -17,31 +13,13 @@
     last = whatchanged -1 HEAD
     history = log --pretty=format:\"%h %cd | %s%d [%an]\" --graph --date=local
     aliases = !git config --get-regexp alias | sed -re 's/alias\\.(\\S*)\\s(.*)$/\\1 = \\2/g'
-    uncom = diff --name-only
-    unmerged = diff --name-only --diff-filter=U HEAD HEAD~1
-    added = diff --name-only --diff-filter=A HEAD HEAD~1
-    modified = diff --name-only --diff-filter=M HEAD HEAD~1
-    revs = rev-list --all
-
-[core]
-	editor = nvim
-
-[color]
-    status = always
-
-[diff]
-    tool = nvimdiff
-
-[difftool]
-    prompt = false
-
-[difftool "nvimdiff"]
-    cmd = "nvim -d \"$LOCAL\" \"$REMOTE\""
+    dn = diff --name-only
 
 [apply]
     whitespace = fix
 
 [color]
+    status = always
 	ui = auto
 
 [color "branch"]
@@ -55,9 +33,32 @@
 	old = red
 	new = green
 
+[core]
+	editor = nvim
+
 [color "status"]
 	added = green
     changed = red
 	untracked = cyan
+
+[diff]
+    tool = nvimdiff
+
+[difftool]
+    prompt = false
+
+[difftool "nvimdiff"]
+    cmd = "nvim -d \"$LOCAL\" \"$REMOTE\""
+
 [init]
 	defaultBranch = main
+
+[pull]
+    autoStash = true
+
+[rebase]
+    autoStash = true
+
+[user]
+	email = ofornander@gmail.com
+	name = Carl Ola Fornander

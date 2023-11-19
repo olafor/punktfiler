@@ -26,6 +26,7 @@ git clone --depth 1 https://github.com/wbthomason/packer.nvim\
 * airblade/vim-gitgutter
 * ajorgensen/vim-markdown-toc
 * akinsho/org-bullets.nvim
+* aklt/plantuml-syntax
 * folke/tokyonight.nvim
 * folke/which-key.nvim
 * folke/zen-mode.nvim
@@ -56,10 +57,6 @@ Convenient setup
 
 ## Gdb
 *.gdbinit* to be properly written
-
-## I3
-Grundläggande inställningar
-* alacritty satt som terminal
 
 ## Cetera
 ### fzf

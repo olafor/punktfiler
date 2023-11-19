@@ -7,6 +7,7 @@ return require('packer').startup(function()
     --config = function()
     --require('org-bullets').setup()
   --end}
+  use 'aklt/plantuml-syntax'
   use 'folke/tokyonight.nvim'
   use {
     'folke/which-key.nvim',
@@ -16,6 +17,7 @@ return require('packer').startup(function()
     require("which-key").setup {}
   end}
   use 'folke/zen-mode.nvim'
+  use 'ggandor/leap.nvim'
   use 'hrsh7th/nvim-cmp'
   use 'jiangmiao/auto-pairs'
   use 'jubnzv/mdeval.nvim'
@@ -37,5 +39,4 @@ return require('packer').startup(function()
   use 'tpope/vim-surround'
   use 'vim-airline/vim-airline'
   use 'vim-airline/vim-airline-themes'
-  use 'ggandor/leap.nvim'
 end)
