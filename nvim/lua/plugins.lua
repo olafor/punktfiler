@@ -2,11 +2,6 @@ return require('packer').startup(function()
   use 'wbthomason/packer.nvim'
   use 'airblade/vim-gitgutter'
   use 'ajorgensen/vim-markdown-toc'
-  --use {
-    --'akinsho/org-bullets.nvim',
-    --config = function()
-    --require('org-bullets').setup()
-  --end}
   use 'aklt/plantuml-syntax'
   use 'folke/tokyonight.nvim'
   use {
@@ -37,6 +32,4 @@ return require('packer').startup(function()
   use 'sindrets/diffview.nvim'
   use 'tpope/vim-fugitive'
   use 'tpope/vim-surround'
-  use 'vim-airline/vim-airline'
-  use 'vim-airline/vim-airline-themes'
 end)

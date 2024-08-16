@@ -25,7 +25,6 @@ git clone --depth 1 https://github.com/wbthomason/packer.nvim\
 ### Plugins
 * airblade/vim-gitgutter
 * ajorgensen/vim-markdown-toc
-* akinsho/org-bullets.nvim
 * aklt/plantuml-syntax
 * folke/tokyonight.nvim
 * folke/which-key.nvim
@@ -45,18 +44,16 @@ git clone --depth 1 https://github.com/wbthomason/packer.nvim\
 * sindrets/diffview.nvim
 * tpope/vim-fugitive
 * tpope/vim-surround
-* vim-airline/vim-airline
-* vim-airline/vim-airline-themes
 
 ### Themes
 * tokyonight
 * gruvbox
 
 ## Tmux
-Convenient setup
 
-## Gdb
-*.gdbinit* to be properly written
+## Git
+Använd delta som pager:
+https://github.com/dandavison/delta
 
 ## Cetera
 ### fzf

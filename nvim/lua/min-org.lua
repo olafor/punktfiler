@@ -1,5 +1,4 @@
 -- Load custom tree-sitter grammar for org filetype
-require('orgmode').setup_ts_grammar()
 
 -- Tree-sitter configuration
 require'nvim-treesitter.configs'.setup {
@@ -67,9 +66,9 @@ require('orgmode').setup({
       headline = 'Idéer'
       },
     l = {
-      description = 'libro leído',
+      description = 'Bok läst',
       template = '** %?\n%U',
-      target = '~/org/libros.org',
+      target = '~/org/libri.org',
       headline = 'Böcker'
       },
     p = {
@@ -112,7 +111,7 @@ require('orgmode').setup({
   org_log_done = 'time',
   org_highlight_latex_and_related = nil,
   org_custom_exports = {},
-  org_indent_mode = 'indent',
+  org_startup_indented = 'indent',
   org_time_stamp_rounding_minutes = 5,
   org_blank_before_new_entry = {
     heading = true,

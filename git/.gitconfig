@@ -1,6 +1,5 @@
 [alias]
     brc = for-each-ref --sort=committerdate refs/heads/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(color:bold blue)%(authorname)%(color:reset) - (%(color:green)%(committerdate:relative)%(color:reset))'
-    lg = log --pretty=format:'%C(yellow)%h%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative -n10
     la = log --pretty=format:'%C(yellow)%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative -n10
     st = status
     br = branch
@@ -20,26 +19,27 @@
 
 [color]
     status = always
-	ui = auto
+    ui = auto
 
 [color "branch"]
-	current = yellow reverse
-	local = yellow
-	remote = green
+    current = yellow reverse
+    local = yellow
+    remote = green
 
 [color "diff"]
-	meta = yellow bold
-	frag = magenta bold
-	old = red
-	new = green
+    meta = yellow bold
+    frag = magenta bold
+    old = red
+    new = green
 
 [core]
-	editor = nvim
+    editor = nvim
+    pager = delta
 
 [color "status"]
-	added = green
+    added = green
     changed = red
-	untracked = cyan
+    untracked = cyan
 
 [diff]
     tool = nvimdiff
@@ -50,9 +50,6 @@
 [difftool "nvimdiff"]
     cmd = "nvim -d \"$LOCAL\" \"$REMOTE\""
 
-[init]
-	defaultBranch = main
-
 [pull]
     autoStash = true
 
@@ -60,5 +57,5 @@
     autoStash = true
 
 [user]
-	email = ofornander@gmail.com
-	name = Carl Ola Fornander
+    email = ofornander@gmail.com
+    name = Carl Ola Fornander
