@@ -55,7 +55,10 @@ git clone --depth 1 https://github.com/wbthomason/packer.nvim\
 Använd delta som pager:
 https://github.com/dandavison/delta
 
-## Cetera
+## Gdb
+Lägg till under ~/.config/gdb/gdbinit
+
+## Övrigt
 ### fzf
 https://github.com/junegunn/fzf
 

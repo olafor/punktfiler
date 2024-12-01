@@ -6,13 +6,11 @@
     co = checkout
     ci = commit   
     cp = cherry-pick
-    sd = diff --name-status
     sw = switch
     wc = whatchanged
     last = whatchanged -1 HEAD
-    history = log --pretty=format:\"%h %cd | %s%d [%an]\" --graph --date=local
+    history = log --pretty=format:'%C(yellow)%h%Creset %C(cyan)%cd%Creset | %C(green)%s%C(red)%d%Creset [%C(blue)%an%Creset]' --graph --date=iso-local
     aliases = !git config --get-regexp alias | sed -re 's/alias\\.(\\S*)\\s(.*)$/\\1 = \\2/g'
-    dn = diff --name-only
 
 [apply]
     whitespace = fix
